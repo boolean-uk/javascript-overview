@@ -27,7 +27,7 @@ and end with star-slash */
 * And the last line ends with star-star-slash
 **/
 
-// Statements can be terminated by `;`
+// Statements can be terminated by ;
 doStuff();
 
 // But not necessarily, as semicolons are normally inserted automatically wherever there's a newline
@@ -127,10 +127,10 @@ null === undefined; // = false
 // You can access characters in a string with `charAt`
 "This is a string".charAt(0);  // = 'T'
 
-// ...or use `substring` to get larger pieces.
+// ...or use substring to get larger pieces.
 "Hello world".substring(0, 5); // = "Hello"
 
-// `length` is a property, so don't use ().
+// length is a property, so don't use ().
 "Hello".length; // = 5
 
 // There's also null and undefined.
@@ -167,7 +167,7 @@ author = "Billy" // you can't do this
 * However, const does not mean the value it holds is immutable — just that the variable identifier
 * cannot be reassigned. This has implications for arrays and objects, because it means the object's
 * contents can be altered. Hence, it is often correct to declare an array or an object const,
-* even when the contents themselves might change
+* even though the contents themselves might change
 **/
 const myArray = ["Steve", "Andy", "James"];
 myArray[2] = "Nathan" // you can do this - ["Steve", "Andy", "Nathan"];
@@ -198,7 +198,7 @@ const myArray = ["Hello", 45, true];
 * Their members can be accessed using the square-brackets subscript syntax.
 * Array indices start at zero (unfortunately).
 **/
-myArray[1]; // = 45
+myArray[0]; // = "Hello"
 
 // Arrays are mutable and of variable length.
 myArray.push("World");
@@ -248,9 +248,11 @@ myObj.myThirdKey = true;
 
 // If you try to access a value that's not yet set, you'll get undefined.
 myObj.myFourthKey; // = undefined
+```
 
 ## Logic and Control Structures
 
+```js
 // The if structure works as you'd expect.
 const count = 1;
 if (count == 3){
@@ -327,7 +329,7 @@ for (let pet of pets){
     myPets += pet + " ";
 } // myPets = 'cat dog hamster hedgehog '
 
-// `&&` is logical and, `||` is logical or
+// && is logical and, || is logical or
 if (house.size == "big" && house.colour == "blue"){
     house.contains = "bear";
 }
@@ -519,8 +521,9 @@ doubler(8); // = 16
 * which is the mechanism by which JavaScript objects inherit features from one another.
 **/
 
-* Below, `myObject` is an object with one data property, city, and one method, greet().
-* However, if you type the object's name followed by a period into the console (`myObject.`),
+/*
+* Below, myObject is an object with one data property, city, and one method, greet().
+* However, if you type the object's name followed by a period into the console (myObject.),
 * the console will pop up a list of all the properties available to this object.
 * You'll see that as well as city and greet, there are lots of other properties
 **/
@@ -545,7 +548,7 @@ myObject.greet(); // Greetings from Madrid
 * reached, in which case undefined is returned.
 **/
 
-/* Object.create and constructors are ways of setting an object's prototype in JavaScript
+// Object.create and constructors are ways of setting an object's prototype in JavaScript
 
 /**
 * Object.create
@@ -563,7 +566,7 @@ carl.greet();  // hello!
 
 /**
 * Constructors
-* A constructor in JavaScript is just a function that happens to be called with the `new` operator.
+* A constructor in JavaScript is just a function that happens to be called with the new operator.
 **/
 function Graph() {
   this.vertices = [];
