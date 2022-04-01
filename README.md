@@ -15,6 +15,7 @@ This overview was inspired by [Learn X in Y minutes, Where X=javascript](https:/
 
 ## Comments
 
+```js
 // Single-line comments start with two slashes.
 
 /* Multiline comments start with slash-star,
@@ -31,9 +32,11 @@ doStuff();
 
 // But not necessarily, as semicolons are normally inserted automatically wherever there's a newline
 doStuff()
+```
 
 ## Numbers, Strings and Operators
 
+```js
 /**
 * JavaScript has one number type (which is a 64-bit IEEE 754 double).
 * Doubles have a 52-bit mantissa, which is enough to store integers
@@ -139,9 +142,11 @@ undefined; // used to indicate a value is not currently present (although
 * `false`, `null`, `undefined`, `NaN`, `0` and `""` are falsy; everything else is truthy
 * Note that `0` is falsy and "0" is truthy, even though `0` == "0".
 **/
+```
 
 ## Variables, Arrays and Objects
 
+```js
 /**
 * Variables are declared with the `let` or `const` keyword.
 * There used to be `var`, too, but declaring variables using `var` is no longer recommended,
@@ -354,9 +359,11 @@ switch (grade) {
     console.log("Oy vey");
     break;
 }
+```
 
 ## Functions, Scope and Closures
 
+```js
 /**
 * JavaScript functions are declared with the `function` keyword.
 * Note that the value to be returned must start on the same line as the
@@ -429,9 +436,11 @@ const sayHelloInFiveSeconds = (name) => {
   // access to the `prompt` variable when it is finally called.
 };
 sayHelloInFiveSeconds("Adam"); // will open a popup with "Hello, Adam!" in 5s
+```
 
 ## More About Objects
 
+```js
 // Objects can contain functions.
 const myObj = {
     myFunc: function(){
@@ -495,9 +504,11 @@ boundFunc(" And Hello Saturn!"); // = "Hello World! And Hello Saturn!"
 let product = function(a, b){ return a * b; };
 let doubler = product.bind(this, 2);
 doubler(8); // = 16
+```
 
 ## Constructors and Prototypes
 
+```js
 /**
 * Every JavaScript object has a built-in 'prototype' property,
 * which is the mechanism by which JavaScript objects inherit features from one another.
@@ -569,9 +580,11 @@ Array.prototype.doubleUp = function () {
 };
 
 [1, 2].doubleUpAgain(); // [1, 1, 2, 2]
+```
 
 ## Classes
 
+```js
 /**
 * Unlike popular object-oriented languages, javaScript does not include 
 * the concept of 'instances' created from 'class' blueprints
@@ -628,3 +641,4 @@ class Student extends Person {
     return this.#year > 1;
   }
 }
+```
