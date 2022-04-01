@@ -80,19 +80,19 @@ NaN; // result of e.g. 0/0, stands for 'Not a Number'
 true;
 false;
 
-// Strings are created with `'` or `"`.
+// Strings are created with ' or ".
 'abc';
 "Hello, world";
 
-// Negation uses the `!` symbol
+// Negation uses the ! symbol
 !true; // = false
 !false; // = true
 
-// Equality is `===`
+// Equality is ===
 1 === 1; // = true
 2 === 1; // = false
 
-// Inequality is `!==`
+// Inequality is !==
 1 !== 1; // = false
 2 !== 1; // = true
 
@@ -102,14 +102,14 @@ false;
 2 <= 2; // = true
 2 >= 2; // = true
 
-// Strings are concatenated with `+`
+// Strings are concatenated with +
 "Hello " + "world!"; // = "Hello world!"
 
 // ... which works with more than just strings
 "1, 2, " + 3; // = "1, 2, 3"
 "Hello " + ["world", "!"]; // = "Hello world,!"
 
-// and are compared with `<` and `>`
+// and are compared with < and >
 "a" < "b"; // = true
 
 // Type coercion is performed for comparisons with double equals...
@@ -120,7 +120,7 @@ null == undefined; // = true
 "5" === 5; // = false
 null === undefined; // = false
 
-// ...which can result in some weird behaviour (hence, always use `===`)
+// ...which can result in some weird behaviour (hence, always use ===)
 13 + !0; // 14
 "13" + !0; // '13true'
 
@@ -133,14 +133,14 @@ null === undefined; // = false
 // `length` is a property, so don't use ().
 "Hello".length; // = 5
 
-// There's also `null` and `undefined`.
+// There's also null and undefined.
 null;      // used to indicate a deliberate non-value
 undefined; // used to indicate a value is not currently present (although
            // `undefined` is actually a value itself)
 
 /**
-* `false`, `null`, `undefined`, `NaN`, `0` and `""` are falsy; everything else is truthy
-* Note that `0` is falsy and "0" is truthy, even though `0` == "0".
+* false, null, undefined, NaN, 0 and "" are falsy; everything else is truthy
+* Note that 0 is falsy and "0" is truthy, even though 0 == "0".
 **/
 ```
 
@@ -148,36 +148,36 @@ undefined; // used to indicate a value is not currently present (although
 
 ```js
 /**
-* Variables are declared with the `let` or `const` keyword.
-* There used to be `var`, too, but declaring variables using `var` is no longer recommended,
+* Variables are declared with the let or const keyword.
+* There used to be var, too, but declaring variables using var is no longer recommended,
 * as it places variables in the global scope.
 * JavaScript is dynamically typed, so you don't need to specify type.
-* Assignment uses a single `=` character.
+* Assignment uses a single = character.
 **/
 
-//`let` variables can be reassigned and are only available in the local lexical scope
+//let variables can be reassigned and are only available in the local lexical scope
 let someVar = 5;
 someVar = 10;
 
-// `const` variables cannot be reasigned
+// const variables cannot be reasigned
 const author = "Steve";
 author = "Billy" // you can't do this
 
 /**
-* However, `const` does not mean the value it holds is immutable — just that the variable identifier
+* However, const does not mean the value it holds is immutable — just that the variable identifier
 * cannot be reassigned. This has implications for arrays and objects, because it means the object's
-* contents can be altered. Hence, it is often correct to declare an array or an object `const`,
+* contents can be altered. Hence, it is often correct to declare an array or an object const,
 * even when the contents themselves might change
 **/
 const myArray = ["Steve", "Andy", "James"];
 myArray[2] = "Nathan" // you can do this - ["Steve", "Andy", "Nathan"];
 
-// If you leave the `let` (or `const`) keyword off, you won't necessarily get an error...
+// If you forget the let (or const) keyword, you won't necessarily get an error...
 someOtherVar = 10;
 
 // ...but your variable will be created in the global scope (which is probably not what you want)
 
-// Variables declared without being assigned to are set to `undefined`.
+// Variables declared without being assigned to are set to undefined.
 let someOtherVar; // = undefined
 
 // If you want to declare a couple of variables, then you could use a comma separator
@@ -251,7 +251,7 @@ myObj.myFourthKey; // = undefined
 
 ## Logic and Control Structures
 
-// The `if` structure works as you'd expect.
+// The if structure works as you'd expect.
 const count = 1;
 if (count == 3){
     // evaluated if count is 3
@@ -261,7 +261,7 @@ if (count == 3){
     // evaluated if it's not either 3 or 4
 }
 
-// As does `while`.
+// As does while.
 while (true){
     // An infinite loop!
 }
@@ -273,7 +273,7 @@ do {
 } while (!isValid(input));
 
 /**
-* The `for` loop is the same as C and Java:
+* The for loop is the same as C and Java:
 * initialization; continue condition; iteration.
 **/
 for (let i = 0; i < 5; i++){
@@ -288,7 +288,7 @@ for (let i = 0; i < 10; i++) {
   text += "The number is " + i + "<br>";
 }
 
-// The `continue` statement breaks one iteration of a loop
+// The continue statement breaks one iteration of a loop
 for (let i = 0; i < 10; i++) {
   if (i === 3) {
     continue;
@@ -298,7 +298,7 @@ for (let i = 0; i < 10; i++) {
 
 /**
 * Using break with a label breaks the labeled statement.  
-* You can use labelled breaks to jump out of _all_ loops
+* You can use labelled breaks to jump out of all loops
 **/
 foo:
 for (let i = 0; i < 10; i++) {
@@ -318,8 +318,8 @@ for (let x in person){
 } // description = 'Paul Ken 18 '
 
 /**
-* The for/of statement allows iteration over iterable objects (including the built-in `String`, 
-* `Array`, `Map`, `Set`, and user-defined iterables).
+* The for/of statement allows iteration over iterable objects (including the built-in String, 
+* Array, Map, Set, and user-defined iterables).
 **/
 let myPets = "";
 const pets = ["cat", "dog", "hamster", "hedgehog"];
@@ -336,14 +336,14 @@ if (colour == "red" || colour == "blue"){
 }
 
 /**
-* `&&` and `||` use ([lazy evaluation](https://en.wikipedia.org/wiki/Lazy_evaluation#JavaScript)),
+* && and || use lazy evaluation (https://en.wikipedia.org/wiki/Lazy_evaluation#JavaScript),
 * which is useful for setting default values.
 **/
 let name = otherName || "default";
 
 /**
-* The `switch` statement checks for equality with `===`.
-* Use `break` after each case or the cases after the correct one will be executed too.
+* The switch statement checks for equality with ===.
+* Use break after each case or the cases after the correct one will be executed too.
 **/
 switch (grade) {
   case 'A':
@@ -365,9 +365,9 @@ switch (grade) {
 
 ```js
 /**
-* JavaScript functions are declared with the `function` keyword.
+* JavaScript functions are declared with the function keyword.
 * Note that the value to be returned must start on the same line as the
-* `return` keyword, otherwise you'll always return `undefined` due to
+* return keyword, otherwise you'll always return undefined due to
 * automatic semicolon insertion.
 **/
 function myFunction(thing){
@@ -376,7 +376,7 @@ function myFunction(thing){
 myFunction("foo"); // = "FOO"
 
 /**
-* However, [ES6](https://www.w3schools.com/js/js_es6.asp) introduced "lambda syntax".
+* However, ES6 (https://www.w3schools.com/js/js_es6.asp) introduced "lambda syntax".
 * This allows functions to be defined in a lexical scope exactly like variables.
 **/
 const isEven = (number) => {
@@ -395,10 +395,10 @@ setTimeout(myFunction, 5000);
 
 /**
 * Note: setTimeout isn't part of the language itself,
-* instead, it is provided by browsers and [node.js](https://nodejs.org/en/).
+* instead, it is provided by browsers and node.js (https://nodejs.org/en/).
 **/
 
-// Another function provided by browsers is `setInterval`
+// Another function provided by browsers is setInterval
 function myFunction(){
     // this code will be called every 5 seconds
 }
@@ -424,16 +424,22 @@ setTimeout(() => {
 **/
 const sayHelloInFiveSeconds = (name) => {
   const prompt = "Hello, " + name + "!";
-  // Inner functions are put in the local scope by default, as if they were
-  // declared with `var`.
+
+  /**
+  * Inner functions are put in the local scope by default, as if they were
+  * declared with var.
+  **/
   function inner() {
     alert(prompt);
   }
+
   setTimeout(inner, 5000);
-  // setTimeout is asynchronous, so the sayHelloInFiveSeconds function will
-  // exit immediately, and setTimeout will call inner afterwards. However,
-  // because inner is "closed over" sayHelloInFiveSeconds, inner still has
-  // access to the `prompt` variable when it is finally called.
+  /**
+  * setTimeout is asynchronous, so the sayHelloInFiveSeconds function will
+  * exit immediately, and setTimeout will call inner afterwards. However,
+  * because inner is "closed over" sayHelloInFiveSeconds, inner still has
+  * access to the prompt variable when it is finally called.
+  **/
 };
 sayHelloInFiveSeconds("Adam"); // will open a popup with "Hello, Adam!" in 5s
 ```
@@ -451,7 +457,7 @@ myObj.myFunc(); // = "Hello world!"
 
 /**
 * When functions attached to an object are called, they can access the object
-* they're attached to using the `this` keyword.
+* they're attached to using the this keyword.
 **/
 myObj = {
     myString: "Hello world!",
@@ -467,7 +473,7 @@ myFunc(); // = undefined
 
 /**
 * A function can be assigned to the object and gain access to that object
-* through `this`, even if it wasn't attached when it was defined.
+* through this, even if it wasn't attached when it was defined.
 **/
 const myOtherFunc = function() {
     return this.myString.toUpperCase();
@@ -477,14 +483,14 @@ myObj.myOtherFunc(); // = "HELLO WORLD!"
 
 /**
 * You can also specify a context for a function to execute in by invoking it
-* using `call` or `apply`.
+* using call or apply.
 **/
 const anotherFunc = function(s) {
     return this.myString + s;
 };
 anotherFunc.call(myObj, " And Hello Moon!"); // = "Hello World! And Hello Moon!"
 
-// The `apply` function is closely related to `call`, but takes an array for an argument list.
+// The apply function is closely related to call, but takes an array for an argument list.
 anotherFunc.apply(myObj, [" And Hello Sun!"]); // = "Hello World! And Hello Sun!"
 
 /**
@@ -495,12 +501,11 @@ Math.min(42, 6, 27); // = 6
 Math.min([42, 6, 27]); // = NaN (uh-oh!)
 Math.min.apply(Math, [42, 6, 27]); // = 6
 
-// But, `call` and `apply` are only temporary. When we want it to stick, we can
-// use `bind`.
+// But, call and apply are only temporary. When we want it to stick, you can use bind.
 const boundFunc = anotherFunc.bind(myObj);
 boundFunc(" And Hello Saturn!"); // = "Hello World! And Hello Saturn!"
 
-// `bind` can also be used to partially apply a function.
+// bind can also be used to partially apply a function.
 let product = function(a, b){ return a * b; };
 let doubler = product.bind(this, 2);
 doubler(8); // = 16
@@ -540,10 +545,10 @@ myObject.greet(); // Greetings from Madrid
 * reached, in which case undefined is returned.
 **/
 
-/* `Object.create` and constructors are ways of setting an object's prototype in JavaScript
+/* Object.create and constructors are ways of setting an object's prototype in JavaScript
 
 /**
-*`Object.create`
+* Object.create
 * This creates a new object and allows you to specify an object
 * that will be used as the new object's prototype.
 **/
@@ -588,14 +593,14 @@ Array.prototype.doubleUp = function () {
 /**
 * Unlike popular object-oriented languages, javaScript does not include 
 * the concept of 'instances' created from 'class' blueprints
-* However, ES6 introduced the `class` keyword, which are  "special functions" built on object prototypes
+* However, ES6 introduced the class keyword, which are "special functions" built on object prototypes
 * The result is that javascript classes behave very similarly to classes in other languages  
 * because they are a template for creating objects that encapsulate data and the
 * code to work on that data.
 **/
 
 /**
-* The `constructor` method is a special method for creating and initialising an object created with a 
+* The constructor method is a special method for creating and initialising an object created with a 
 * class. There can only be one special method with the name "constructor" in a class.
 **/
 class Person {
